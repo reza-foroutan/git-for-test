@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git</title>
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.css" />
     <link rel="stylesheet" type="text/css" href="./src/css/main.css" />
   </head>
   <body>
     <!-- #region Project-->
     <div class="wrapper">
       <!-- #region menu -->
+      <div class="bars">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
       <div class="menu">
         <nav>
           <div><a href="#">home</a></div>
@@ -20,17 +26,31 @@
           <div><a href="#">video</a></div>
         </nav>
       </div>
-      <div class="bars">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-      </div>
+
       <!-- #Endregion menu -->
       <!-- #region slider -->
+      <div class="slider">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./public/images/GODRagnarokCover1.webp" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./public/images/godofwar4-01.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
       <!-- #endregion slider -->
     </div>
-    <!-- #Endregion Project-->
 
+    <!-- #Endregion Project-->
+    <!-- Initialize Swiper -->
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.js" />
     <script>
       let bars = document.querySelector(".bars");
       let menu = document.querySelector(".menu");
@@ -39,6 +59,25 @@
         menu.classList.toggle("active");
         bars.classList.toggle("changeBgBars");
       });
+
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
     </script>
+
+    <script></script>
   </body>
 </html>
